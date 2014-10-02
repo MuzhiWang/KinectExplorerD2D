@@ -27,3 +27,5 @@ C:\Users\Guang\Documents\ProgramSample\WPF\KinectExplorerD2D\obj\Debug\KinectExp
 C:\Users\Guang\Documents\ProgramSample\WPF\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.g.resources
 C:\Users\Guang\Documents\ProgramSample\WPF\KinectExplorerD2D\obj\Debug\Northwestern.Samples.Kinect.KinectExplorerD2D.Properties.Resources.resources
 C:\Users\Guang\Documents\ProgramSample\WPF\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.csproj.GenerateResource.Cache
+C:\Users\Guang\Documents\ProgramSample\WPF\KinectExplorerD2D\obj\Debug\KinectWindow.baml
+C:\Users\Guang\Documents\ProgramSample\WPF\KinectExplorerD2D\obj\Debug\KinectWindow.g.cs

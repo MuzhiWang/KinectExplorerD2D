@@ -1,9 +1,18 @@
-﻿//------------------------------------------------------------------------------
-// <copyright file="MainWindow.xaml.cs" company="Microsoft">
-//     Copyright (c) Microsoft Corporation.  All rights reserved.
-// </copyright>
-//------------------------------------------------------------------------------
-namespace Northwestern.Kinect.KinectExplorerD2D
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace Northwestern.Samples.Kinect.KinectExplorerD2D
 {
     using System;
     using System.Windows.Input;
@@ -17,9 +26,9 @@ namespace Northwestern.Kinect.KinectExplorerD2D
     using Microsoft.Kinect;
 
     /// <summary>
-    /// Interaction logic for MainWindow
+    /// Interaction logic for KinectWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window //, INotifyPropertyChanged
+    public partial class KinectWindow : Window
     {
         /// <summary>
         /// Active Kinect sensor
@@ -36,14 +45,9 @@ namespace Northwestern.Kinect.KinectExplorerD2D
         /// </summary>
         private WriteableBitmap colorBitmap = null;
 
-        private Northwestern.Samples.Kinect.KinectExplorerD2D.KinectWindow kinectwindow = null;
-
-        /// <summary>
-        /// Initializes a new instance of the MainWindow class.
-        /// </summary>
-        public MainWindow()
+        public KinectWindow()
         {
-            // get the kinectSensor object
+
             this.kinectSensor = KinectSensor.GetDefault();
 
             // open the reader for the color frames
@@ -58,48 +62,15 @@ namespace Northwestern.Kinect.KinectExplorerD2D
             // create the bitmap to display
             this.colorBitmap = new WriteableBitmap(colorFrameDescription.Width, colorFrameDescription.Height, 96.0, 96.0, PixelFormats.Bgr32, null);
 
-            // this.kinectSensor.IsAvailableChanged += this.Sensor_IsAvailableChanged;
-
             // open the sensor
             this.kinectSensor.Open();
 
-            // this.KinectState = this.kinectSensor.IsAvailable ? "Opened" : "Closed";
-
-            // initialize the components (controls) of the window
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
-        /*public event PropertyChangedEventHandler PropertyChanged;
-
-        public ImageSource ImageSource
+        private void KinectWindow_Closing(object sender, CancelEventArgs e)
         {
-            get
-            {
-                return this.colorBitmap;
-            }
-        }*/
-
-        /// <summary>
-        /// Execute shutdown tasks
-        /// </summary>
-        /// <param name="sender">object sending the event</param>
-        /// <param name="e">event arguments</param>
-        private void MainWindow_Closing(object sender, CancelEventArgs e)
-        {
-            if (this.colorFrameReader != null)
-            {
-                // ColorFrameReder is IDisposable
-                this.colorFrameReader.Dispose();
-                this.colorFrameReader = null;
-            }
-
-            if (this.kinectSensor != null)
-            {
-                this.kinectSensor.Close();
-                this.kinectSensor = null;
-            }
         }
-
         /// <summary>
         /// Handles the color frame data arriving from the sensor
         /// </summary>
@@ -133,49 +104,10 @@ namespace Northwestern.Kinect.KinectExplorerD2D
                     }
                     if (this.colorBitmap != null)
                     {
-                        camera1.Source = this.colorBitmap;
+                        camera.Source = this.colorBitmap;
                     }
                 }
             }
         }
-
-        
-
-        private void Screen_Click(object sender, MouseButtonEventArgs e)
-        {
-            if (kinectwindow == null || kinectwindow.IsDisposed)
-            {
-                kinectwindow = new Samples.Kinect.KinectExplorerD2D.KinectWindow();
-                kinectwindow.Show();
-            }
-
-            //if (kinectwindow.IsActive == false)
-            //{
-            //    kinectwindow.Activate();
-            //}
-        }
-        //private string kinectState = null;
-
-        //public string KinectState
-        //{
-        //    get 
-        //    {
-        //        return this.kinectState;
-        //    }
-
-        //    set 
-        //    {
-        //        this.kinectState = value;
-        //        if(this.PropertyChanged != null)
-        //        {
-        //            this.PropertyChanged(this, new PropertyChangedEventArgs("KinectState"));
-        //        }
-        //    }
-        //}
-
-        //private void Sensor_IsAvailableChanged(object sender, IsAvailableChangedEventArgs e)
-        //{
-        //    this.KinectState = this.kinectSensor.IsAvailable ? "Opened" : "Closed";
-        //}
     }
 }

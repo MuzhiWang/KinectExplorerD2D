@@ -26,8 +26,8 @@
         <Viewbox Grid.Row="0" Grid.Column="0" MouseUp="Screen_Click">
             <Image Name="camera1" Stretch="UniformToFill" />
         </Viewbox>
-        <Viewbox Grid.Row="0" Grid.Column="1">
-            <Image Name="camera2" Stretch="UniformToFill" />
+        <Viewbox Name="camera2" Grid.Column="1">
+            <!--<Image Source="{Binding ImageSource}" Stretch="UniformToFill" />-->
         </Viewbox>
         <Viewbox Grid.Row="0" Grid.Column="2">
             <Image Name="camera3" Stretch="UniformToFill" />
