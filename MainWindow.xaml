@@ -2,19 +2,30 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="KinectExplorer-D2D" 
-        Height="320" Width="400" 
+        Height="640" Width="800" 
         Closing="MainWindow_Closing">
     <Window.Resources>
+        <Style x:Key="SpecialButton" TargetType="{x:Type Button}">
+            <Style.Triggers>
+                <Trigger Property="Button.IsMouseOver" Value="true">
+                    <Setter Property = "Background" Value="Red"/>
+                </Trigger>
+                <Trigger Property="Button.IsPressed" Value="true">
+                    <Setter Property = "Foreground" Value="Green"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
-    
-    <Grid>
+
+    <Grid Margin="0,25,0,0">
         <Grid.RowDefinitions>
+            <RowDefinition  />
+            <RowDefinition/>
+            <RowDefinition  />
             <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -23,17 +34,85 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Viewbox Grid.Row="0" Grid.Column="0" MouseUp="Screen_Click">
+        <Viewbox Grid.Row="0" Grid.Column="0" MouseUp="Screen_Click" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="3,0,95,0"  VerticalAlignment="Top">
+            
             <Image Name="camera1" Stretch="UniformToFill" />
         </Viewbox>
-        <Viewbox Name="camera2" Grid.Column="1">
+        <Viewbox Name="camera2" Grid.Column="1" Grid.RowSpan="2">
             <!--<Image Source="{Binding ImageSource}" Stretch="UniformToFill" />-->
         </Viewbox>
-        <Viewbox Grid.Row="0" Grid.Column="2">
+        <Viewbox Grid.Row="0" Grid.Column="2" Grid.RowSpan="2">
             <Image Name="camera3" Stretch="UniformToFill" />
         </Viewbox>
-        <Viewbox Grid.Row="0" Grid.Column="3">
-            <Image Name="camera4" Stretch="UniformToFill" />
+        <Viewbox Grid.Row="0" Grid.Column="3" Grid.RowSpan="2">
+            <StackPanel Margin="20"/>
         </Viewbox>
+        <Viewbox Grid.Row="2" Grid.Column="0"/>
+
+        <Menu Grid.ColumnSpan="4" HorizontalAlignment="Left" Height="22" Margin="1,-24,0,0" VerticalAlignment="Top" Width="800">
+            <MenuItem Header="File">
+                <MenuItem Header="New"/>
+                <MenuItem Header="Open"/>
+                <MenuItem Header="Save"/>
+            </MenuItem>
+            <MenuItem Header="Action">
+                <MenuItem Header="Play"/>
+                <MenuItem Header="Pause"/>
+                <MenuItem Header="Store"/>
+            </MenuItem>
+            <MenuItem Header="About"/>
+        </Menu>
     </Grid>
+
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState x:Name="DefaultLayout">
+                <!-- The default Visibility properties are set in the XAML that defines the objects. -->
+            </VisualState>
+            <VisualState x:Name="MinimalLayout">
+                <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="defaultNavigation" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="minimalNavigation" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemGridView" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemListView" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemListView" Storyboard.TargetProperty="ItemTemplate">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="10,6"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemListView" Storyboard.TargetProperty="Padding">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="10,0,0,60"/>
+                    </ObjectAnimationUsingKeyFrames>
+                </Storyboard>
+            </VisualState>
+            <VisualState x:Name="PortraitLayout">
+                <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="defaultNavigation" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="minimalNavigation" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemGridView" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemListView" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemListView" Storyboard.TargetProperty="ItemTemplate">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemListView" Storyboard.TargetProperty="Padding">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="60,0,0,10"/>
+                    </ObjectAnimationUsingKeyFrames>
+                </Storyboard>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
 </Window>

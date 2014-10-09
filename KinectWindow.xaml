@@ -1,14 +1,54 @@
 ﻿<Window x:Class="Northwestern.Samples.Kinect.KinectExplorerD2D.KinectWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="KinectWindow" Height="300" Width="300"
+        Title="KinectWindow" Height="600" Width="600"
         Closing="KinectWindow_Closing">
     <Grid>
         <StackPanel>
-            <Menu Height="10"/>
+            <Menu Height="20">
+                <MenuItem Header="File">
+                    <MenuItem Header="New"/>
+                    <MenuItem Header="Open"/>
+                    <MenuItem Header="Save"/>
+                </MenuItem>
+                <MenuItem Header="Action">
+                    <MenuItem Header="Play"/>
+                    <MenuItem Header="Pause"/>
+                    <MenuItem Header="Store"/>
+                </MenuItem>
+                <MenuItem Header="About"/>
+
+
+            </Menu>
         </StackPanel>
-        <Viewbox>
-            <Image Name="camera" Stretch="UniformToFill" />
+
+        <Viewbox Margin="2,21,176,259">
+            <Image x:Name="camera" Stretch="UniformToFill" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         </Viewbox>
+        <Grid Margin="423,23,6,261">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Viewbox Grid.Row="0" Grid.Column="0">
+                <Label >
+                    Depth Data
+                </Label>
+            </Viewbox>
+            <Viewbox Grid.Row="1" Grid.Column="0">
+                <Button Name="Play" Content="Record"  >
+                </Button>
+            </Viewbox>
+
+        </Grid>
+
+        <Grid>
+            <Viewbox Margin="0,302,172,0">
+                <Border BorderBrush="Black" BorderThickness="1" Height="100" Width="157">
+                    <Label Content="&#xD;&#xA;&#xD;&#xA;    Personal Information&#xD;&#xA;"/>
+                </Border>
+            </Viewbox>
+        </Grid>
     </Grid>
 </Window>

@@ -143,7 +143,7 @@ namespace Northwestern.Kinect.KinectExplorerD2D
 
         private void Screen_Click(object sender, MouseButtonEventArgs e)
         {
-            if (kinectwindow == null || kinectwindow.IsDisposed)
+            if (kinectwindow == null)
             {
                 kinectwindow = new Samples.Kinect.KinectExplorerD2D.KinectWindow();
                 kinectwindow.Show();
@@ -154,6 +154,8 @@ namespace Northwestern.Kinect.KinectExplorerD2D
             //    kinectwindow.Activate();
             //}
         }
+
+        
         //private string kinectState = null;
 
         //public string KinectState

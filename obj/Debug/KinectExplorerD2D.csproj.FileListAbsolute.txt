@@ -29,3 +29,40 @@ C:\Users\Guang\Documents\ProgramSample\WPF\KinectExplorerD2D\obj\Debug\Northwest
 C:\Users\Guang\Documents\ProgramSample\WPF\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.csproj.GenerateResource.Cache
 C:\Users\Guang\Documents\ProgramSample\WPF\KinectExplorerD2D\obj\Debug\KinectWindow.baml
 C:\Users\Guang\Documents\ProgramSample\WPF\KinectExplorerD2D\obj\Debug\KinectWindow.g.cs
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\KinectExplorerD2D.exe.config
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.exe
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.csprojResolveAssemblyReference.cache
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectWindow.baml
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\MainWindow.baml
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectWindow.g.cs
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\MainWindow.g.cs
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\App.g.cs
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D_MarkupCompile.cache
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.g.resources
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\Northwestern.Samples.Kinect.KinectExplorerD2D.Properties.Resources.resources
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.csproj.GenerateResource.Cache
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\KinectExplorerD2D.exe
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\KinectExplorerD2D.pdb
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\Microsoft.Kinect.dll
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\Microsoft.Kinect.xml
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.pdb
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\Copy\KinectExplorerD2D\bin\AnyCPU\Debug\KinectExplorerD2D.exe.config
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\Copy\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.exe
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\Copy\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.pdb
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\Copy\KinectExplorerD2D\bin\AnyCPU\Debug\KinectExplorerD2D.exe
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\Copy\KinectExplorerD2D\bin\AnyCPU\Debug\KinectExplorerD2D.pdb
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\Copy\KinectExplorerD2D\bin\AnyCPU\Debug\Microsoft.Kinect.dll
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\Copy\KinectExplorerD2D\bin\AnyCPU\Debug\Microsoft.Kinect.xml
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\Copy\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.csprojResolveAssemblyReference.cache
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\Copy\KinectExplorerD2D\obj\Debug\KinectWindow.baml
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\Copy\KinectExplorerD2D\obj\Debug\MainWindow.baml
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\Copy\KinectExplorerD2D\obj\Debug\KinectWindow.g.cs
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\Copy\KinectExplorerD2D\obj\Debug\MainWindow.g.cs
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\Copy\KinectExplorerD2D\obj\Debug\App.g.cs
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\Copy\KinectExplorerD2D\obj\Debug\KinectExplorerD2D_MarkupCompile.cache
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\Copy\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.g.resources
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\Copy\KinectExplorerD2D\obj\Debug\Northwestern.Samples.Kinect.KinectExplorerD2D.Properties.Resources.resources
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\Copy\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.csproj.GenerateResource.Cache
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\KinectExplorerD2D\bin\AnyCPU\Debug\KinectExplorerD2D.exe.config
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.exe
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.pdb
