@@ -143,11 +143,11 @@ namespace Northwestern.Kinect.KinectExplorerD2D
 
         private void Screen_Click(object sender, MouseButtonEventArgs e)
         {
-            if (kinectwindow == null)
-            {
+            //if (kinectwindow == null)
+            //{
                 kinectwindow = new Samples.Kinect.KinectExplorerD2D.KinectWindow();
                 kinectwindow.Show();
-            }
+           // }
 
             //if (kinectwindow.IsActive == false)
             //{

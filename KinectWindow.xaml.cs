@@ -1,18 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
-namespace Northwestern.Samples.Kinect.KinectExplorerD2D
+﻿namespace Northwestern.Samples.Kinect.KinectExplorerD2D
 {
     using System;
     using System.Windows.Input;
@@ -24,7 +10,10 @@ namespace Northwestern.Samples.Kinect.KinectExplorerD2D
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using Microsoft.Kinect;
-
+    using Emgu.CV;
+    using Emgu.CV.Structure;
+    using System.Drawing;
+    
     /// <summary>
     /// Interaction logic for KinectWindow.xaml
     /// </summary>
@@ -84,8 +73,15 @@ namespace Northwestern.Samples.Kinect.KinectExplorerD2D
                 if (colorFrame != null)
                 {
                     FrameDescription colorFrameDescription = colorFrame.FrameDescription;
-
-                    using (KinectBuffer colorBuffer = colorFrame.LockRawImageBuffer())
+                    int width = colorFrame.FrameDescription.Width;
+                    int height = colorFrame.FrameDescription.Height;
+                    byte[] pixels = new byte[width * height * 4];
+                    colorFrame.CopyConvertedFrameDataToArray(pixels, ColorImageFormat.Bgra);
+                    //Image<Bgr, Byte> img = new Image<Bgr, byte>(BytesToBitmap(pixels));
+                    BitmapSource bitmapsource = BitmapSource.Create(width, height, 96, 96, PixelFormats.Bgra32, null, pixels, width * 4);
+                    //Image<Bgra, Byte> img = new Image<Bgra, byte>(10, 10);
+                    camera.Source = bitmapsource;//BitmapSource.Create(width, height, 96, 96, PixelFormats.Bgra32, null, pixels, width * 4);
+                    /*using (KinectBuffer colorBuffer = colorFrame.LockRawImageBuffer())
                     {
                         this.colorBitmap.Lock();
 
@@ -105,9 +101,23 @@ namespace Northwestern.Samples.Kinect.KinectExplorerD2D
                     if (this.colorBitmap != null)
                     {
                         camera.Source = this.colorBitmap;
-                    }
+                    }*/
                 }
             }
         }
+
+        public static Bitmap BytesToBitmap(BitmapSource bitmapsource)
+        {
+            System.Drawing.Bitmap bitmap;
+            using (var outStream = new MemoryStream())
+            {
+                BmpBitmapEncoder enc = new BmpBitmapEncoder();
+                enc.Frames.Add(BitmapFrame.Create(bitmapsource));
+                enc.Save(outStream);
+                bitmap = new System.Drawing.Bitmap(outStream);
+                return bitmap;
+            }
+        }
+
     }
 }
