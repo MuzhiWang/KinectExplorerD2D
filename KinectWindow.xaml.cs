@@ -34,6 +34,7 @@
         /// Bitmap to display
         /// </summary>
         private WriteableBitmap colorBitmap = null;
+
         private VideoWriter video = null;
         //private Thread isRecording;
         //private Mat img;
@@ -155,6 +156,11 @@
             BitmapSource bitmapsource = BitmapSource.Create(width, height, 16, 16, PixelFormats.Bgra32, null, pixels, width * 4);
             Image<Bgr, Byte> img = new Image<Bgr, byte>(BytesToBitmap(bitmapsource));
             return bitmapsource;
+        }
+
+        private void RGBClick(object sender, RoutedEventArgs e)
+        {
+
         }
 
 

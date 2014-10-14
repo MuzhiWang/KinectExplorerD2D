@@ -6,8 +6,8 @@
     <Grid>
         <StackPanel>
             <Menu Height="20">
-                <MenuItem Header="File">
-                    <MenuItem Header="New"/>
+                <MenuItem Header="Record">
+                    <MenuItem Header="RGBRecord" Click="RGBClick"/>
                     <MenuItem Header="Open"/>
                     <MenuItem Header="Save"/>
                 </MenuItem>
@@ -17,8 +17,6 @@
                     <MenuItem Header="Store"/>
                 </MenuItem>
                 <MenuItem Header="About"/>
-
-
             </Menu>
         </StackPanel>
 
