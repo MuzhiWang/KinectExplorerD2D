@@ -79,13 +79,13 @@
             this.colorBitmap = new WriteableBitmap(colorFrameDescription.Width, colorFrameDescription.Height, 96.0, 96.0, PixelFormats.Bgr32, null);
 
             // wire handler for frame arrival
-            //this.colorFrameReader.FrameArrived += this.Reader_ColorFrameArrived;
+            this.colorFrameReader.FrameArrived += this.Reader_ColorFrameArrived;
 
             // open the reader for the depth frames
             this.depthFrameReader = this.kinectSensor.DepthFrameSource.OpenReader();
 
             // wire handler for frame arrival
-            this.depthFrameReader.FrameArrived += this.Reader_FrameArrived;
+            // this.depthFrameReader.FrameArrived += this.Reader_FrameArrived;
 
             // get FrameDescription from DepthFrameSource
             this.depthFrameDescription = this.kinectSensor.DepthFrameSource.FrameDescription;
@@ -96,8 +96,8 @@
             // create the bitmap to display
             this.depthBitmap = new WriteableBitmap(this.depthFrameDescription.Width, this.depthFrameDescription.Height, 96.0, 96.0, PixelFormats.Gray8, null);
             
-            System.Drawing.Size size = new System.Drawing.Size(depthFrameDescription.Width, this.depthFrameDescription.Height);
-            this.depth = new VideoWriter(@"456.avi", -1, 10, size, true);     
+            //System.Drawing.Size size = new System.Drawing.Size(depthFrameDescription.Width, this.depthFrameDescription.Height);
+            //this.depth = new VideoWriter(@"456.avi", -1, 30, size, true);     
 
             // open the sensor
             this.kinectSensor.Open();
@@ -144,7 +144,13 @@
                             if ((m_TimerCount++) % FramesPerFile == 0)
                             {
                                 System.Drawing.Size size = new System.Drawing.Size(width, height);
-                                this.video = new VideoWriter(@"123.mp4", -1, 10, size, true);                     
+                                // string fileName = GetFileName(1);
+                                //string fileName = "1 2 3" + ".avi";
+                                DateTime dt = DateTime.Now;
+
+                                string fileName = dt.TimeOfDay.ToString().Substring(3, 2) + ".avi";
+                                Console.WriteLine(fileName);
+                                this.video = new VideoWriter(fileName, -1, 10, size, true);                     
                             }
                             m_TimerCount %= FramesPerFile;
                         }
@@ -273,8 +279,8 @@
             string savePath = null;
             System.DateTime currentTime = new System.DateTime();
             currentTime = System.DateTime.Now;
-            string date = currentTime.ToString("g");
-            Console.WriteLine(date);
+            string date = currentTime.ToString("t");
+            //Console.WriteLine(date + ".avi");
             return date;
         }
     }
