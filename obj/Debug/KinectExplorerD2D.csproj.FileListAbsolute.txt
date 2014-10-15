@@ -123,7 +123,6 @@ C:\Users\Guang\Documents\GitHub\KinectExplorerD2D\bin\AnyCPU\Debug\Emgu.CV.Video
 C:\Users\Guang\Documents\GitHub\KinectExplorerD2D\bin\AnyCPU\Debug\Emgu.Util.xml
 C:\Users\Guang\Documents\GitHub\KinectExplorerD2D\bin\AnyCPU\Debug\Microsoft.Kinect.xml
 C:\Users\Guang\Documents\GitHub\KinectExplorerD2D\bin\AnyCPU\Debug\Emgu.CV.Cuda.xml
-C:\Users\Guang\Documents\GitHub\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.csprojResolveAssemblyReference.cache
 C:\Users\Guang\Documents\GitHub\KinectExplorerD2D\obj\Debug\KinectWindow.baml
 C:\Users\Guang\Documents\GitHub\KinectExplorerD2D\obj\Debug\MainWindow.baml
 C:\Users\Guang\Documents\GitHub\KinectExplorerD2D\obj\Debug\KinectWindow.g.cs
@@ -134,3 +133,4 @@ C:\Users\Guang\Documents\GitHub\KinectExplorerD2D\obj\Debug\KinectExplorerD2D_Ma
 C:\Users\Guang\Documents\GitHub\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.g.resources
 C:\Users\Guang\Documents\GitHub\KinectExplorerD2D\obj\Debug\Northwestern.Samples.Kinect.KinectExplorerD2D.Properties.Resources.resources
 C:\Users\Guang\Documents\GitHub\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.csproj.GenerateResource.Cache
+C:\Users\Guang\Documents\GitHub\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.csprojResolveAssemblyReference.cache
