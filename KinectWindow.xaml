@@ -6,9 +6,9 @@
     <Grid>
         <StackPanel>
             <Menu Height="20">
-                <MenuItem Header="File">
-                    <MenuItem Header="New"/>
-                    <MenuItem Header="Open"/>
+                <MenuItem Header="Record">
+                    <MenuItem Header="RGBRecord" Click="RGBClick"/>
+                    <MenuItem Header="DepthRecord" Click="DepthClick"/>
                     <MenuItem Header="Save"/>
                 </MenuItem>
                 <MenuItem Header="Action">
@@ -17,8 +17,6 @@
                     <MenuItem Header="Store"/>
                 </MenuItem>
                 <MenuItem Header="About"/>
-
-
             </Menu>
         </StackPanel>
 
@@ -37,7 +35,7 @@
                 </Label>
             </Viewbox>
             <Viewbox Grid.Row="1" Grid.Column="0">
-                <Button Name="Play" Content="Record"  >
+                <Button Name="Play" Content="Record" Height="15" Width="40" Opacity="0.75" BorderThickness="0.5" Margin="10,0" Padding="2,2,1,2" FontSize="8" FontWeight="Bold" BorderBrush="#FF785959" Background="#FF809FF3" >
                 </Button>
             </Viewbox>
 
