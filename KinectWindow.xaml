@@ -4,7 +4,16 @@
         Title="KinectWindow" Height="600" Width="600"
         Closing="KinectWindow_Closing">
     <Grid>
-        <StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21*" />
+            <RowDefinition Height="359*" />
+            <RowDefinition Height="189*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="405*" />
+            <ColumnDefinition Width="187*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0">
             <Menu Height="20">
                 <MenuItem Header="Record">
                     <MenuItem Header="RGBRecord" Click="RGBClick"/>
@@ -18,33 +27,38 @@
                 </MenuItem>
                 <MenuItem Header="About"/>
             </Menu>
-        </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Viewbox Margin="2,2,176,357" Grid.Row="1">
+                <Image x:Name="camera" Stretch="UniformToFill" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            </Viewbox>
+        </Grid>
 
-        <Viewbox Margin="2,21,176,259">
-            <Image x:Name="camera" Stretch="UniformToFill" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        </Viewbox>
-        <Grid Margin="423,23,6,261">
+        
+        <Grid Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Viewbox Grid.Row="0" Grid.Column="0">
-                <Label >
-                    Depth Data
-                </Label>
-            </Viewbox>
-            <Viewbox Grid.Row="1" Grid.Column="0">
-                <Button Name="Play" Content="Record" Height="15" Width="40" Opacity="0.75" BorderThickness="0.5" Margin="10,0" Padding="2,2,1,2" FontSize="8" FontWeight="Bold" BorderBrush="#FF785959" Background="#FF809FF3" >
-                </Button>
-            </Viewbox>
+            <Grid Grid.Row="0">
+                <Viewbox Grid.Row="1" Grid.Column="1">
+                    <Image Name="depth" Stretch="UniformToFill" />
+                </Viewbox>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Viewbox Grid.Row="1" Grid.Column="0">
+                    <Button Name="Play" Content="Record" Height="15" Width="40" Opacity="0.75" BorderThickness="0.5" Margin="10,0" Padding="2,2,1,2" FontSize="8" FontWeight="Bold" BorderBrush="#FF785959" Background="#FF809FF3" >
+                    </Button>
+                </Viewbox>
+            </Grid>
 
         </Grid>
 
-        <Grid>
-            <Viewbox Margin="0,302,172,0">
-                <Border BorderBrush="Black" BorderThickness="1" Height="100" Width="157">
-                    <Label Content="&#xD;&#xA;&#xD;&#xA;    Personal Information&#xD;&#xA;"/>
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Viewbox>
+                <Border BorderBrush="Black" BorderThickness="1" Height="100" Width="220">
+                    <Label Content="Personal Information&#xA;" Margin="-2,0,0,0" FontWeight="Bold" FontSize="18" Padding="15,35,5,5"/>
                 </Border>
             </Viewbox>
         </Grid>
