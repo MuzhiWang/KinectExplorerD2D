@@ -59,9 +59,15 @@
 
         private VideoWriter depth = null;
 
-        private Boolean rgbRecording = false; 
+        private Boolean rgbRecording = false;
+
+        private Boolean depthRecording = false;
+
         private int m_TimerCount = 0;
-        private int FramesPerFile = 1000;
+        
+        private int colorFramesPerFile = 9000;
+
+        private int depthFramesPerFile = 9000;
 
         private string path = "C:\\Users\\Guang\\Desktop\\KinectData\\video\\";
 
@@ -85,7 +91,7 @@
             this.depthFrameReader = this.kinectSensor.DepthFrameSource.OpenReader();
 
             // wire handler for frame arrival
-            // this.depthFrameReader.FrameArrived += this.Reader_FrameArrived;
+            this.depthFrameReader.FrameArrived += this.Reader_DepthFrameArrived;
 
             // get FrameDescription from DepthFrameSource
             this.depthFrameDescription = this.kinectSensor.DepthFrameSource.FrameDescription;
@@ -141,18 +147,18 @@
                         this.colorBitmap.Lock();
                         if (this.rgbRecording == true)
                         {
-                            if ((m_TimerCount++) % FramesPerFile == 0)
+                            if ((m_TimerCount++) % colorFramesPerFile == 0)
                             {
                                 System.Drawing.Size size = new System.Drawing.Size(width, height);
                                 // string fileName = GetFileName(1);
                                 //string fileName = "1 2 3" + ".avi";
-                                DateTime dt = DateTime.Now;
+                                // DateTime dt = DateTime.Now;
 
-                                string fileName = dt.TimeOfDay.ToString().Substring(3, 2) + ".avi";
-                                Console.WriteLine(fileName);
-                                this.video = new VideoWriter(fileName, -1, 10, size, true);                     
+                                // string fileName = dt.TimeOfDay.ToString().Substring(3, 2) + ".avi";
+                                // Console.WriteLine(fileName);
+                                this.video = new VideoWriter("15min-30FPS-lossless.avi", -1, 10, size, true);                     
                             }
-                            m_TimerCount %= FramesPerFile;
+                            m_TimerCount %= colorFramesPerFile;
                         }
 
                         // verify data and write the new color frame data to the display bitmap
@@ -187,7 +193,7 @@
         /// </summary>
         /// <param name="sender">object sending the event</param>
         /// <param name="e">event arguments</param>
-        private void Reader_FrameArrived(object sender, DepthFrameArrivedEventArgs e)
+        private void Reader_DepthFrameArrived(object sender, DepthFrameArrivedEventArgs e)
         {
             bool depthFrameProcessed = false;
 
@@ -199,6 +205,16 @@
                     // the underlying buffer
                     using (Microsoft.Kinect.KinectBuffer depthBuffer = depthFrame.LockImageBuffer())
                     {
+                        if (this.depthRecording == true)
+                        {
+                            if ((this.m_TimerCount++) % this.depthFramesPerFile == 0)
+                            {
+                                System.Drawing.Size size = new System.Drawing.Size(this.depthFrameDescription.Width, this.depthFrameDescription.Height);
+                                this.video = new VideoWriter("123.avi", -1, 10, size, true);
+                            }
+                            this.m_TimerCount %= this.depthFramesPerFile;
+                        }
+                        
                         // verify data and write the color data to the display bitmap
                         if (((this.depthFrameDescription.Width * this.depthFrameDescription.Height) == (depthBuffer.Size / this.depthFrameDescription.BytesPerPixel)))
                         {
@@ -210,8 +226,7 @@
                             //// maxDepth = depthFrame.DepthMaxReliableDistance
 
                             this.ProcessDepthFrameData(depthBuffer.UnderlyingBuffer, depthBuffer.Size, depthFrame.DepthMinReliableDistance, maxDepth);
-                            depthFrameProcessed = true;
-                            
+                            depthFrameProcessed = true;                  
                         }
                     }
                 }
@@ -220,11 +235,9 @@
             if (depthFrameProcessed)
             {             
                 this.RenderDepthPixels();
-                if (this.depth != null)
+                if (this.depthRecording == true && this.depth != null)
                 {
                     Mat img = new Mat(this.depthFrameDescription.Height, this.depthFrameDescription.Width, Emgu.CV.CvEnum.DepthType.Cv8U, 1, this.depthBitmap.BackBuffer, this.depthFrameDescription.Width);
-                    // Image<Gray, Byte> img1 = new Image<Gray, byte>(img.Bitmap);
-                    // CvInvoke.cvShowImage("123", img1);
                     this.depth.Write(img);
                 }
             }
@@ -274,6 +287,11 @@
             this.rgbRecording = this.rgbRecording ? false : true;
         }
 
+        private void DepthClick(object sender, RoutedEventArgs e)
+        {
+            this.depthRecording = this.depthRecording ? false : true;
+        }
+
         private string GetFileName(int sensorID) 
         {
             string savePath = null;
@@ -283,5 +301,7 @@
             //Console.WriteLine(date + ".avi");
             return date;
         }
+
+        
     }
 }

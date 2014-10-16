@@ -8,7 +8,7 @@
             <Menu Height="20">
                 <MenuItem Header="Record">
                     <MenuItem Header="RGBRecord" Click="RGBClick"/>
-                    <MenuItem Header="Open"/>
+                    <MenuItem Header="DepthRecord" Click="DepthClick"/>
                     <MenuItem Header="Save"/>
                 </MenuItem>
                 <MenuItem Header="Action">
