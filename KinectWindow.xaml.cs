@@ -327,10 +327,11 @@
         }
 
         /***** Media source open ****/
-        private string FileName;
+        
         async private void SetLocalMedia(DateTime o)
         {
-            FileName = GetFileName(o) + ".mp4";
+            string FileName = GetFileName(o) + ".mp4";
+            Console.WriteLine(FileName);
             this.media.Source = new Uri(FileName, UriKind.RelativeOrAbsolute);
             this.media.LoadedBehavior = System.Windows.Controls.MediaState.Manual;
         } 
@@ -351,28 +352,31 @@
             message1.Text ="Selected Time: " + enterTime.Text.Substring(0,2) + " : " + enterTime.Text.Substring(2) + "\n" +
                 "Selected Date: " + dateString;
             Console.WriteLine(dateString);
-            return;
             int year = 0, month = 0, day = 0, hour = 0, mins = 0;
-            for (int i = 0; i < 4; ++i) {
-                year += (int)((char)dateString[i + 6] - '0') * (int)Math.Pow(10, 3 - i);
-            }
-            for (int i = 0; i < 2; ++i )
-            {
-                month += (dateString[i] - '0') * (int)Math.Pow(10, 1 - i);
-                day += (dateString[i + 3] - '0') * (int)Math.Pow(10, 1 - i);
-                hour += (enterTime.Text[i] - '0') * (int)Math.Pow(10, 1 - i);
-                mins += (enterTime.Text[i + 2] - '0') * (int)Math.Pow(10, 1 - i);
-            }
 
+            int counter = 0, powNum = 0;
+            while (dateString[counter] != ' ')
+            {
+                counter++;
+            }
+            counter--;
+
+            string[] separators = new string[] { "/", " " };
+            string[] result = dateString.Split(separators, StringSplitOptions.None);
+
+            Console.WriteLine(result[0] + " " + result[1] + " " + result[2]);
+            month = Int32.Parse(result[0]);
+            day = Int32.Parse(result[1]);
+            year = Int32.Parse(result[2]);
             Console.Write(year);
             Console.Write(month);
             Console.Write(day);
             Console.Write(hour);
-            Console.Write(mins);
+            Console.WriteLine(mins);
 
-            //originData = new DateTime(year, month, day, hour, mins, 0);
-            //Console.WriteLine(originData);
-            //SetLocalMedia(originData);
+            originData = new DateTime(year, month, day, hour, mins, 0);
+            Console.WriteLine(originData);
+            SetLocalMedia(originData);
 
         }
 
@@ -423,7 +427,7 @@
 
         public string GetFileName(DateTime o)
         {
-            return "C:\bbb";
+            return "C:\\bbb";
         }
 
 
