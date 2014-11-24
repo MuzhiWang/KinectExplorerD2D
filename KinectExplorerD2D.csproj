@@ -95,8 +95,9 @@
     <Reference Include="Emgu.Util">
       <HintPath>..\..\..\..\..\Program Files\Emgu\bin\Emgu.Util.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Kinect">
-      <HintPath>$(KINECTSDK20_DIR)Assemblies\Microsoft.Kinect.dll</HintPath>
+    <Reference Include="Microsoft.Kinect, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Microsoft.Kinect.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
