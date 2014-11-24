@@ -327,28 +327,53 @@
         }
 
         /***** Media source open ****/
-        async private void SetLocalMedia()
+        private string FileName;
+        async private void SetLocalMedia(DateTime o)
         {
-            string str = "C:/" + "bbb" + ".mp4";
-            this.media.Source = new Uri(str, UriKind.RelativeOrAbsolute);
+            FileName = GetFileName(o) + ".mp4";
+            this.media.Source = new Uri(FileName, UriKind.RelativeOrAbsolute);
             this.media.LoadedBehavior = System.Windows.Controls.MediaState.Manual;
-        }
+        } 
 
-
+        /***** onclick return original time+data information  ****/
+        
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
+            DateTime originData;
             string dateString;
-            SetLocalMedia();
+            
             if (cal1.SelectedDate == null)
             {
                 dateString = "<date not selected>";
+                return;
             }
-            else
-            {
-                dateString = cal1.SelectedDate.ToString();
-            }
+            dateString = cal1.SelectedDate.ToString();
             message1.Text ="Selected Time: " + enterTime.Text.Substring(0,2) + " : " + enterTime.Text.Substring(2) + "\n" +
                 "Selected Date: " + dateString;
+            Console.WriteLine(dateString);
+            return;
+            int year = 0, month = 0, day = 0, hour = 0, mins = 0;
+            for (int i = 0; i < 4; ++i) {
+                year += (int)((char)dateString[i + 6] - '0') * (int)Math.Pow(10, 3 - i);
+            }
+            for (int i = 0; i < 2; ++i )
+            {
+                month += (dateString[i] - '0') * (int)Math.Pow(10, 1 - i);
+                day += (dateString[i + 3] - '0') * (int)Math.Pow(10, 1 - i);
+                hour += (enterTime.Text[i] - '0') * (int)Math.Pow(10, 1 - i);
+                mins += (enterTime.Text[i + 2] - '0') * (int)Math.Pow(10, 1 - i);
+            }
+
+            Console.Write(year);
+            Console.Write(month);
+            Console.Write(day);
+            Console.Write(hour);
+            Console.Write(mins);
+
+            //originData = new DateTime(year, month, day, hour, mins, 0);
+            //Console.WriteLine(originData);
+            //SetLocalMedia(originData);
+
         }
 
         /*******  Slider Frequency Setting  ********/
@@ -395,9 +420,10 @@
                 mediaTime.Content = "No file selected...";
         }
 
-        public void GetFileName()
-        {
 
+        public string GetFileName(DateTime o)
+        {
+            return "C:\bbb";
         }
 
 

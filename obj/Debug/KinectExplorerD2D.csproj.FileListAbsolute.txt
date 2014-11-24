@@ -31,7 +31,6 @@ C:\Users\Guang\Documents\ProgramSample\WPF\KinectExplorerD2D\obj\Debug\KinectWin
 C:\Users\Guang\Documents\ProgramSample\WPF\KinectExplorerD2D\obj\Debug\KinectWindow.g.cs
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\KinectExplorerD2D.exe.config
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.exe
-C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.csprojResolveAssemblyReference.cache
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectWindow.baml
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\MainWindow.baml
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectWindow.g.cs
@@ -209,19 +208,7 @@ C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyC
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\opencv_xfeatures2d300.dll
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\opencv_ximgproc300.dll
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\opencv_xobjdetect300.dll
-C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\Emgu.CV.Cuda.dll
-C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\ZedGraph.dll
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\Emgu.CV.xml
-C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\Emgu.CV.ML.xml
-C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\Emgu.CV.OCR.xml
-C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\Emgu.CV.Shape.xml
-C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\Emgu.CV.Stitching.xml
-C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\Emgu.CV.Superres.xml
-C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\Emgu.CV.UI.xml
-C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\Emgu.CV.UI.GL.xml
-C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\Emgu.CV.VideoStab.xml
-C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\Emgu.Util.xml
-C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\Emgu.CV.Cuda.xml
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\Themes\generic.baml
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\Window1.g.cs
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D_Content.g.cs
