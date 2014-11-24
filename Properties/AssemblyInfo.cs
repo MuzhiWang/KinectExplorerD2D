@@ -16,6 +16,7 @@ using System.Windows;
 [assembly: AssemblyTitle("ColorBasics-WPF")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
+[assembly: AssemblyProduct("ColorBasics-WPF")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyVersionAttribute("1.0.0.0")]
 

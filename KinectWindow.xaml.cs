@@ -14,6 +14,10 @@
     using Emgu.CV.Structure;
     using System.Drawing;
     using System.Threading;
+    using System.Windows.Threading;
+    //using Wind
+    //using Windows.Storage;
+    //using System.Windows.Storage.Pickers;
     
     /// <summary>
     /// Interaction logic for KinectWindow.xaml
@@ -69,7 +73,7 @@
 
         private int depthFramesPerFile = 9000;
 
-        private string path = "C:\\Users\\Guang\\Desktop\\KinectData\\video\\";
+        private string path = "C:\\Users\\Desktop\\KinectData\\video\\";
 
         public KinectWindow()
         {           
@@ -111,6 +115,12 @@
             // string a = GetFileName(5);
 
             InitializeComponent();
+
+            /******* Media time information *******/
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += timer_Tick;
+            timer.Start();
         }
 
         private void KinectWindow_Closing(object sender, CancelEventArgs e)
@@ -182,7 +192,7 @@
 
                     if (this.colorBitmap != null)
                     {
-                        camera.Source = this.colorBitmap;
+                        //camera.Source = this.colorBitmap;
                     }
                 }
             }
@@ -302,6 +312,126 @@
             return date;
         }
 
-        
+        /**** Media play/stop/pause button ***/
+        private void StopMedia(object sender, RoutedEventArgs e)
+        {
+            media.Stop();
+        }
+        private void PauseMedia(object sender, RoutedEventArgs e)
+        {
+            media.Pause();
+        }
+        private void PlayMedia(object sender, RoutedEventArgs e)
+        {
+            media.Play();
+        }
+
+        /***** Media source open ****/
+        async private void SetLocalMedia()
+        {
+            string str = "C:/" + "bbb" + ".mp4";
+            this.media.Source = new Uri(str, UriKind.RelativeOrAbsolute);
+            this.media.LoadedBehavior = System.Windows.Controls.MediaState.Manual;
+        }
+
+
+        private void okButton_Click(object sender, RoutedEventArgs e)
+        {
+            string dateString;
+            SetLocalMedia();
+            if (cal1.SelectedDate == null)
+            {
+                dateString = "<date not selected>";
+            }
+            else
+            {
+                dateString = cal1.SelectedDate.ToString();
+            }
+            message1.Text ="Selected Time: " + enterTime.Text.Substring(0,2) + " : " + enterTime.Text.Substring(2) + "\n" +
+                "Selected Date: " + dateString;
+        }
+
+        /*******  Slider Frequency Setting  ********/
+        private double SliderFrequency(TimeSpan timevalue)
+        {
+            double stepfrequency = -1;
+
+            double absvalue = (int)Math.Round(
+                timevalue.TotalSeconds, MidpointRounding.AwayFromZero);
+
+            stepfrequency = (int)(Math.Round(absvalue / 100));
+
+            if (timevalue.TotalMinutes >= 10 && timevalue.TotalMinutes < 30)
+            {
+                stepfrequency = 10;
+            }
+            else if (timevalue.TotalMinutes >= 30 && timevalue.TotalMinutes < 60)
+            {
+                stepfrequency = 30;
+            }
+            else if (timevalue.TotalHours >= 1)
+            {
+                stepfrequency = 60;
+            }
+
+            if (stepfrequency == 0) stepfrequency += 1;
+
+            if (stepfrequency == 1)
+            {
+                stepfrequency = absvalue / 100;
+            }
+
+            return stepfrequency;
+        }
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            if (media.Source != null)
+            {
+                if (media.NaturalDuration.HasTimeSpan)
+                    mediaTime.Content = String.Format("{0} / {1}", media.Position.ToString(@"mm\:ss"), media.NaturalDuration.TimeSpan.ToString(@"mm\:ss"));
+            }
+            else
+                mediaTime.Content = "No file selected...";
+        }
+
+        public void GetFileName()
+        {
+
+        }
+
+
+        /**********  Slider parameters setting  ************/
+        //private dispatchertimer _timer;
+
+        //private void setuptimer()
+        //{
+        //    _timer = new dispatchertimer();
+        //    _timer.interval = timespan.fromseconds(timelineslider.tickfrequency);
+        //    starttimer();
+        //}
+
+        //private void _timer_tick(object sender, object e)
+        //{
+        //    if (timelineslider.mousedoubleclick == true)
+        //    {
+        //        timelineslider.value = media.position.totalseconds;
+        //    }
+        //}
+
+        //private void starttimer()
+        //{
+        //    _timer.tick += _timer_tick;
+        //    _timer.start();
+        //}
+
+        //private void stoptimer()
+        //{
+        //    _timer.stop();
+        //    _timer.tick -= _timer_tick;
+        //}
+
+        /*************  Slider event setting  *****************/
+
     }
 }
