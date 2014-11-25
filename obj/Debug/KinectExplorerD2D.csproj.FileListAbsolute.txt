@@ -208,7 +208,6 @@ C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyC
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\opencv_xfeatures2d300.dll
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\opencv_ximgproc300.dll
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\opencv_xobjdetect300.dll
-C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\Emgu.CV.xml
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\Themes\generic.baml
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\Window1.g.cs
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D_Content.g.cs
@@ -216,3 +215,4 @@ C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debu
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D_MarkupCompile.lref
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\Themes\DatePicker.baml
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\Window1.baml
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.csprojResolveAssemblyReference.cache

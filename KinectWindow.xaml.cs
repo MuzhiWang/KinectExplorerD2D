@@ -15,6 +15,9 @@
     using System.Drawing;
     using System.Threading;
     using System.Windows.Threading;
+    using System.Net;
+    using System.Text;
+
     //using Wind
     //using Windows.Storage;
     //using System.Windows.Storage.Pickers;
@@ -330,7 +333,7 @@
         
         async private void SetLocalMedia(DateTime o)
         {
-            string FileName = GetFileName(o) + ".mp4";
+            string FileName = GetFileName(o) + ".avi";
             Console.WriteLine(FileName);
             this.media.Source = new Uri(FileName, UriKind.RelativeOrAbsolute);
             this.media.LoadedBehavior = System.Windows.Controls.MediaState.Manual;
@@ -354,12 +357,12 @@
             Console.WriteLine(dateString);
             int year = 0, month = 0, day = 0, hour = 0, mins = 0;
 
-            int counter = 0, powNum = 0;
-            while (dateString[counter] != ' ')
-            {
-                counter++;
-            }
-            counter--;
+            //int counter = 0, powNum = 0;
+            //while (dateString[counter] != ' ')
+            //{
+            //    counter++;
+            //}
+            //counter--;
 
             string[] separators = new string[] { "/", " " };
             string[] result = dateString.Split(separators, StringSplitOptions.None);
@@ -377,7 +380,6 @@
             originData = new DateTime(year, month, day, hour, mins, 0);
             Console.WriteLine(originData);
             SetLocalMedia(originData);
-
         }
 
         /*******  Slider Frequency Setting  ********/
@@ -427,7 +429,29 @@
 
         public string GetFileName(DateTime o)
         {
-            return "C:\\bbb";
+            /******/
+            FTPDownload ftpTest = new FTPDownload();
+            string[] fileNames = ftpTest.GetFileList();
+            foreach (string file in fileNames) {
+                Console.WriteLine(file);
+            }
+            string[] downloadFileNames = new string[3];
+            // rgb 0, depth 1, csv 2; 
+            char[] fileName = "100_0_2014_11_21_23_58_59".ToCharArray();
+            string path = "KinectData/Kinect/";
+            downloadFileNames[0] = path + "rgb/20141121/" + new string(fileName) + ".avi";
+            fileName[4] = '1';
+            downloadFileNames[1] = path + "depth/20141121/" + new string(fileName) + ".avi";
+            fileName[4] = '2';
+            downloadFileNames[2] = path + "csv/20141121/" + new string(fileName) + ".csv";
+            //downloadFileNames[3] = path + "text/20141121/" + fileName + ".txt";
+            foreach (string file in downloadFileNames)
+            {
+                Console.WriteLine(file);
+                ftpTest.Download(file);
+            }
+            fileName[4] = '1';
+            return "..\\..\\..\\Video\\" + new string(fileName);
         }
 
 
@@ -463,5 +487,171 @@
 
         /*************  Slider event setting  *****************/
 
+        /*********** Http request post test  ************/
+        private void HttpRequestPostTest()
+        {
+            WebRequestPostExample webPost = new WebRequestPostExample();
+            webPost.webRequestPostTest();
+        }
+
+        /*********************  FTP download testing  *************************/
+        
     }
+
+
+
+
+    /***************  Http request class *****************/
+    public class WebRequestPostExample
+    {
+        public void webRequestPostTest()
+        {
+            // Create a request using a URL that can receive a post. 
+            WebRequest request = WebRequest.Create("http://www.contoso.com/PostAccepter.aspx ");
+            // Set the Method property of the request to POST.
+            request.Method = "POST";
+            // Create POST data and convert it to a byte array.
+            string postData = "This is a test that posts this string to a Web server.";
+            byte[] byteArray = Encoding.UTF8.GetBytes(postData);
+            // Set the ContentType property of the WebRequest.
+            request.ContentType = "application/x-www-form-urlencoded";
+            // Set the ContentLength property of the WebRequest.
+            request.ContentLength = byteArray.Length;
+            // Get the request stream.
+            Stream dataStream = request.GetRequestStream();
+            // Write the data to the request stream.
+            dataStream.Write(byteArray, 0, byteArray.Length);
+            // Close the Stream object.
+            dataStream.Close();
+            // Get the response.
+            WebResponse response = request.GetResponse();
+            // Display the status.
+            Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+            // Get the stream containing content returned by the server.
+            dataStream = response.GetResponseStream();
+            // Open the stream using a StreamReader for easy access.
+            StreamReader reader = new StreamReader(dataStream);
+            // Read the content.
+            string responseFromServer = reader.ReadToEnd();
+            // Display the content.
+            Console.WriteLine(responseFromServer);
+            // Clean up the streams.
+            reader.Close();
+            dataStream.Close();
+            response.Close();
+        }
+    }
+
+    /***********************  FTP download class  **************************/
+    public class FTPDownload
+    {
+        private bool postFTPReqeust(string fileName, string userName, string password) {
+            //string[] files = GetFileList();
+            //foreach (string file in files)
+            //{
+            //    Download(file);
+            //}
+            //Download(fileName);
+            return true;
+        }
+
+        public string[] GetFileList()
+        {
+            string[] downloadFiles;
+            StringBuilder result = new StringBuilder();
+            WebResponse response = null;
+            StreamReader reader = null;
+            try
+            {
+                FtpWebRequest reqFTP;
+                string url = "129.105.36.183";
+                string userName = "lisaliu";
+                string password = "123456";
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://" + url + "/"));
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential(userName, password);
+                reqFTP.Method = WebRequestMethods.Ftp.ListDirectory;
+                reqFTP.Proxy = null;
+                reqFTP.KeepAlive = false;
+                reqFTP.UsePassive = false;
+                response = reqFTP.GetResponse();
+                reader = new StreamReader(response.GetResponseStream());
+                string line = reader.ReadLine();
+                while (line != null)
+                {
+                    result.Append(line);
+                    result.Append("\n");
+                    line = reader.ReadLine();
+                }
+                // to remove the trailing '\n'
+                result.Remove(result.ToString().LastIndexOf('\n'), 1);
+                return result.ToString().Split('\n');
+            }
+            catch (Exception ex)
+            {
+                if (reader != null)
+                {
+                    reader.Close();
+                }
+                if (response != null)
+                {
+                    response.Close();
+                }                
+                downloadFiles = null;
+                return downloadFiles;
+            }
+        }
+
+        
+        public void Download(string file)
+        {                       
+            try
+            {   
+                string ftpServerIP = "129.105.36.183";
+                string ftpUserID = "lisaliu";
+                string ftpPassword = "123456";
+                string localDestnDir = "..\\..\\..\\Video";
+                string uri = "ftp://" + ftpServerIP + "/" + file;
+                Uri serverUri = new Uri(uri);
+                if (serverUri.Scheme != Uri.UriSchemeFtp)
+                {
+                    return;
+                }       
+                FtpWebRequest reqFTP;                
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://" + ftpServerIP + "/" + file));                                
+                reqFTP.Credentials = new NetworkCredential(ftpUserID, ftpPassword);                
+                reqFTP.KeepAlive = false;                
+                reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;                                
+                reqFTP.UseBinary = true;
+                reqFTP.Proxy = null;                 
+                reqFTP.UsePassive = false;
+
+                string[] seperator = new string[] { "/" };
+                string[] pathToFile = file.Split(seperator, StringSplitOptions.None);
+                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
+                Stream responseStream = response.GetResponseStream();
+                FileStream writeStream = new FileStream(localDestnDir + "\\" + pathToFile[pathToFile.Length - 1], FileMode.Create);                
+                int Length = 2048;
+                Byte[] buffer = new Byte[Length];
+                int bytesRead = responseStream.Read(buffer, 0, Length);               
+                while (bytesRead > 0)
+                {
+                    writeStream.Write(buffer, 0, bytesRead);
+                    bytesRead = responseStream.Read(buffer, 0, Length);
+                }                
+                writeStream.Close();
+                response.Close(); 
+            }
+            catch (WebException wEx)
+            {
+                MessageBox.Show(wEx.Message, "Download Error");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Download Error");
+            }
+        }
+    }
+
+
 }
