@@ -360,31 +360,23 @@
             dateString = cal1.SelectedDate.ToString();
             message1.Text ="Selected Time: " + enterTime.Text.Substring(0,2) + " : " + enterTime.Text.Substring(2) + "\n" +
                 "Selected Date: " + dateString;
-            Console.WriteLine(dateString);
+            //Console.WriteLine(dateString);
             int year = 0, month = 0, day = 0, hour = 0, mins = 0;
-
-            //int counter = 0, powNum = 0;
-            //while (dateString[counter] != ' ')
-            //{
-            //    counter++;
-            //}
-            //counter--;
-
             string[] separators = new string[] { "/", " " };
             string[] result = dateString.Split(separators, StringSplitOptions.None);
 
-            Console.WriteLine(result[0] + " " + result[1] + " " + result[2]);
+            //Console.WriteLine(result[0] + " " + result[1] + " " + result[2]);
             month = Int32.Parse(result[0]);
             day = Int32.Parse(result[1]);
             year = Int32.Parse(result[2]);
-            Console.Write(year);
-            Console.Write(month);
-            Console.Write(day);
-            Console.Write(hour);
-            Console.WriteLine(mins);
+            //Console.Write(year);
+            //Console.Write(month);
+            //Console.Write(day);
+            //Console.Write(hour);
+            //Console.WriteLine(mins);
 
             originData = new DateTime(year, month, day, hour, mins, 0);
-            Console.WriteLine(originData);
+            //Console.WriteLine(originData);
             SetLocalMedia(originData);
         }
 
