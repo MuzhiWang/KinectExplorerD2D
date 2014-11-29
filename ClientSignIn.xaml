@@ -5,6 +5,7 @@
 
     <Grid>
         <Label Content="User Name: " Height="28" HorizontalAlignment="Left" Margin="154, 28, 0, 0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="Password: " Height="28" HorizontalAlignment="Left" Margin="154, 62, 0, 0" Name="label2" VerticalAlignment="Top" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="274, 33, 0, 0" Name="usernameTB" VerticalAlignment="Top" Width="120" />
         <PasswordBox Height="23" HorizontalAlignment="Left" Margin="274, 67, 0, 0" Name="PasswordBoxPB" VerticalAlignment="Top" Width="120" />
         <Button Content="Log in" Height="23" Click="LoginBTN_Click" HorizontalAlignment="Left" Margin="319, 104, 0, 0" Name="LoginBTN" VerticalAlignment="Top" Width="75" />

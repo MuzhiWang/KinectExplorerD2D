@@ -197,6 +197,7 @@ C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyC
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\KinectExplorerD2D.exe
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\KinectExplorerD2D.pdb
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\bin\AnyCPU\Debug\Microsoft.Kinect.dll
+C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.csprojResolveAssemblyReference.cache
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\ClientSignIn.baml
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectWindow.baml
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\MainWindow.baml
@@ -219,4 +220,3 @@ C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debu
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.csproj.GenerateResource.Cache
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.exe
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.pdb
-C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.csprojResolveAssemblyReference.cache

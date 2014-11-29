@@ -17,6 +17,8 @@
     using System.Windows.Threading;
     using System.Net;
     using System.Text;
+    using Microsoft.Win32;
+    using System.Windows.Controls.Primitives;
 
     //using Wind
     //using Windows.Storage;
@@ -77,6 +79,10 @@
         private int depthFramesPerFile = 9000;
 
         private string path = "C:\\Users\\Desktop\\KinectData\\video\\";
+
+        private bool mediaPlayerIsPlaying = false;
+
+        private bool userIsDraggingSlider = false;
 
         public KinectWindow()
         {           
@@ -316,18 +322,18 @@
         }
 
         /**** Media play/stop/pause button ***/
-        private void StopMedia(object sender, RoutedEventArgs e)
-        {
-            media.Stop();
-        }
-        private void PauseMedia(object sender, RoutedEventArgs e)
-        {
-            media.Pause();
-        }
-        private void PlayMedia(object sender, RoutedEventArgs e)
-        {
-            media.Play();
-        }
+        //private void StopMedia(object sender, RoutedEventArgs e)
+        //{
+        //    media.Stop();
+        //}
+        //private void PauseMedia(object sender, RoutedEventArgs e)
+        //{
+        //    media.Pause();
+        //}
+        //private void PlayMedia(object sender, RoutedEventArgs e)
+        //{
+        //    media.Play();
+        //}
 
         /***** Media source open ****/
         
@@ -382,51 +388,87 @@
             SetLocalMedia(originData);
         }
 
-        /*******  Slider Frequency Setting  ********/
-        private double SliderFrequency(TimeSpan timevalue)
+        /*******  Time progress bar Slider Setting  ********/
+        private void timer_Tick(object sender, EventArgs e)
         {
-            double stepfrequency = -1;
-
-            double absvalue = (int)Math.Round(
-                timevalue.TotalSeconds, MidpointRounding.AwayFromZero);
-
-            stepfrequency = (int)(Math.Round(absvalue / 100));
-
-            if (timevalue.TotalMinutes >= 10 && timevalue.TotalMinutes < 30)
+            if ((media.Source != null) && (media.NaturalDuration.HasTimeSpan) && (!userIsDraggingSlider))
             {
-                stepfrequency = 10;
+                sliProgress.Minimum = 0;
+                sliProgress.Maximum = media.NaturalDuration.TimeSpan.TotalSeconds;
+                sliProgress.Value = media.Position.TotalSeconds;
             }
-            else if (timevalue.TotalMinutes >= 30 && timevalue.TotalMinutes < 60)
-            {
-                stepfrequency = 30;
-            }
-            else if (timevalue.TotalHours >= 1)
-            {
-                stepfrequency = 60;
-            }
-
-            if (stepfrequency == 0) stepfrequency += 1;
-
-            if (stepfrequency == 1)
-            {
-                stepfrequency = absvalue / 100;
-            }
-
-            return stepfrequency;
         }
 
-        void timer_Tick(object sender, EventArgs e)
+        private void Open_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            if (media.Source != null)
-            {
-                if (media.NaturalDuration.HasTimeSpan)
-                    mediaTime.Content = String.Format("{0} / {1}", media.Position.ToString(@"mm\:ss"), media.NaturalDuration.TimeSpan.ToString(@"mm\:ss"));
-            }
-            else
-                mediaTime.Content = "No file selected...";
+            e.CanExecute = true;
+        }
+
+        private void Open_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Media files (*.mp3;*.mpg;*.mpeg;*.avi)|*.mp3;*.mpg;*.mpeg;*.avi|All files (*.*)|*.*";
+            if (openFileDialog.ShowDialog() == true)
+                media.Source = new Uri(openFileDialog.FileName);
+        }
+
+        private void Play_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = (media != null) && (media.Source != null);
+        }
+
+        private void Play_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            media.Play();
+            mediaPlayerIsPlaying = true;
+        }
+
+        private void Pause_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = mediaPlayerIsPlaying;
+        }
+
+        private void Pause_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            media.Pause();
+        }
+
+        private void Stop_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = mediaPlayerIsPlaying;
+        }
+
+        private void Stop_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            media.Stop();
+            mediaPlayerIsPlaying = false;
+        }
+
+        private void sliProgress_DragStarted(object sender, DragStartedEventArgs e)
+        {
+            userIsDraggingSlider = true;
+        }
+
+        private void sliProgress_DragCompleted(object sender, DragCompletedEventArgs e)
+        {
+            userIsDraggingSlider = false;
+            media.Position = TimeSpan.FromSeconds(sliProgress.Value);
+        }
+
+        private void sliProgress_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            lblProgressStatus.Text = TimeSpan.FromSeconds(sliProgress.Value).ToString(@"hh\:mm\:ss");
+        }
+
+        private void Grid_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            media.Volume += (e.Delta > 0) ? 0.1 : -0.1;
         }
 
 
+
+
+        /****  get file name from server ***/
         public string GetFileName(DateTime o)
         {
             /******/

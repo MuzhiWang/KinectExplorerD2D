@@ -30,14 +30,14 @@ namespace Northwestern.Samples.Kinect.KinectExplorerD2D
         private void LoginBTN_Click(object sender, RoutedEventArgs e)
         {
             if (!usernameTB.Text.Equals("") && !PasswordBoxPB.Password.Equals("")) {
-                if (usernameTB.Text.Equals("123") && PasswordBoxPB.Password.Equals("456")) {
+                if (usernameTB.Text.Equals("lisaliu") && PasswordBoxPB.Password.Equals("123456")) {
                     LoginBTN.Visibility = Visibility.Collapsed;
                     logoutBTN.Visibility = Visibility.Visible;
                     this.Hide();
                     kinectWindow = new Samples.Kinect.KinectExplorerD2D.KinectWindow();
                     kinectWindow.Show();
-                    Northwestern.Samples.Kinect.KinectExplorerD2D.VideoPlayerTest videoTest = new VideoPlayerTest();
-                    videoTest.Show();
+                    //Northwestern.Samples.Kinect.KinectExplorerD2D.VideoPlayerTest videoTest = new VideoPlayerTest();
+                    //videoTest.Show();
                     
                 }
                 else
