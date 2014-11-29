@@ -122,6 +122,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClientSignIn.xaml.cs">
+      <DependentUpon>ClientSignIn.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DateHelper.cs" />
     <Compile Include="DatePicker.cs" />
     <Compile Include="OneWayValueConverters.cs" />
@@ -129,6 +132,10 @@
       <SubType>Code</SubType>
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
+    <Page Include="ClientSignIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="KinectWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
