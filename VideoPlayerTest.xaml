@@ -3,6 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="VideoPlayerTest" Height="480" Width="600"
         MinWidth="300" SizeToContent="WidthAndHeight">
+    <!--<Window.Resources> 
+        <CornerRadius="10">
+    </Window.Resources>-->
         <Window.CommandBindings>
             <CommandBinding Command="ApplicationCommands.Open" CanExecute="Open_CanExecute" Executed="Open_Executed" />
             <CommandBinding Command="MediaCommands.Play" CanExecute="Play_CanExecute" Executed="Play_Executed" />
@@ -17,17 +20,17 @@
             </Grid.RowDefinitions>
             <ToolBar>
                 <Button Command="ApplicationCommands.Open">
-                    <Image Source="/Images/Logo.png" Width="60" />
+                    <Image Source="/Images/Logo.png" Height="30" Width="60" />
                 </Button>
                 <Separator />
                 <Button Command="MediaCommands.Play">
-                    <Image Source="/Images/play.png" Height="30" Width="30" />
+                    <Image Source="/Images/play.png" Height="45" Width="45" />
                 </Button>
                 <Button Command="MediaCommands.Pause">
-                <Image Source="/KinectExplorerD2D;component/Images/pause.png" Height="30" Width="30" />
+                    <Image Source="/KinectExplorerD2D;component/Images/pause.png" Height="30" Width="30" />
                 </Button>
                 <Button Command="MediaCommands.Stop">
-                <Image Source="/KinectExplorerD2D;component/Images/stop.png" Height="30" Width="30" />
+                    <Image Source="/KinectExplorerD2D;component/Images/stop.png" Height="30" Width="30" />
                 </Button>
             </ToolBar>
 
