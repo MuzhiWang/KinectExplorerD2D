@@ -337,7 +337,7 @@
 
         /***** Media source open ****/
         
-        async private void SetLocalMedia(DateTime o)
+        private void SetLocalMedia(DateTime o)
         {
             string FileName = GetFileName(o) + ".avi";
             Console.WriteLine(FileName);
