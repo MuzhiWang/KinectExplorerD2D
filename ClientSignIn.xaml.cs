@@ -36,6 +36,8 @@ namespace Northwestern.Samples.Kinect.KinectExplorerD2D
                     this.Hide();
                     kinectWindow = new Samples.Kinect.KinectExplorerD2D.KinectWindow();
                     kinectWindow.Show();
+                    Northwestern.Samples.Kinect.KinectExplorerD2D.VideoPlayerTest videoTest = new VideoPlayerTest();
+                    videoTest.Show();
                     
                 }
                 else
