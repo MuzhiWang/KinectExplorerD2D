@@ -127,6 +127,9 @@
     </Compile>
     <Compile Include="DateHelper.cs" />
     <Compile Include="DatePicker.cs" />
+    <Compile Include="MultiWindow.xaml.cs">
+      <DependentUpon>MultiWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OneWayValueConverters.cs" />
     <Compile Include="VideoPlayerTest.xaml.cs">
       <DependentUpon>VideoPlayerTest.xaml</DependentUpon>
@@ -158,6 +161,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MultiWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\DatePicker.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

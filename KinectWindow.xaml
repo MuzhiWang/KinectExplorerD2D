@@ -127,8 +127,6 @@
             </Grid>
             <Grid Grid.Row="1">
                 <Viewbox Grid.Row="1" Grid.Column="0">
-                    <Button Name="Play" Content="Record" Height="15" Width="40" Opacity="0.75" BorderThickness="0.5" Margin="10,0" Padding="2,2,1,2" FontSize="8" FontWeight="Bold" BorderBrush="#FF785959" Background="#FF809FF3" >
-                    </Button>
                 </Viewbox>
             </Grid>
 
@@ -160,5 +158,12 @@
                 <Image Source="/Images/Logo.png" Height="30" Width="60" />
             </Button>
         </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Button Name="Logout" Click="Logout_click" FontSize="24" FontFamily="Comic Sans MS, Verdana" Height="48" Width="108" Opacity="0.75" BorderThickness="0.5" Margin="10,0" Padding="2,2,1,2" FontWeight="Bold" BorderBrush="#FF785959" Background="#FF809FF3" >
+                Log out
+            </Button>
+        </Grid>
+
     </Grid>
 </Window>

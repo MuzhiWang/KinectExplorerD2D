@@ -345,6 +345,16 @@
             this.media.LoadedBehavior = System.Windows.Controls.MediaState.Manual;
         } 
 
+        /*********  Log out button  **********/
+        private void Logout_click(object sender, RoutedEventArgs e)
+        {
+            //this.Close();
+            Northwestern.Samples.Kinect.KinectExplorerD2D.ClientSignIn signIn = new ClientSignIn();
+            signIn.Show();
+            this.Close();
+        }
+
+
         /***** onclick return original time+data information  ****/
         
         private void okButton_Click(object sender, RoutedEventArgs e)
