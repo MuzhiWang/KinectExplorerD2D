@@ -33,9 +33,10 @@ namespace Northwestern.Samples.Kinect.KinectExplorerD2D
                 if (usernameTB.Text.Equals("lisaliu") && PasswordBoxPB.Password.Equals("123456")) {
                     LoginBTN.Visibility = Visibility.Collapsed;
                     logoutBTN.Visibility = Visibility.Visible;
-                    //this.Hide();
-                    kinectWindow = new Samples.Kinect.KinectExplorerD2D.KinectWindow();
-                    kinectWindow.Show();
+                    //kinectWindow = new Samples.Kinect.KinectExplorerD2D.KinectWindow();
+                    //kinectWindow.Show();
+                    MultiWindow multiWindow = new MultiWindow();
+                    multiWindow.Show();
                     this.Close();
                     //Northwestern.Samples.Kinect.KinectExplorerD2D.VideoPlayerTest videoTest = new VideoPlayerTest();
                     //videoTest.Show();

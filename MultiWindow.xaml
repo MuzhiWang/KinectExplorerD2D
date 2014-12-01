@@ -5,11 +5,11 @@
     <Grid>
 
         <Grid.RowDefinitions >
-            <RowDefinition Height="4*" />
-            <RowDefinition Height="25*" />
-            <RowDefinition Height="25*" />
-            <RowDefinition Height="25*" />
-            <RowDefinition Height="25*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="209" />
+            <RowDefinition Height="19*" />
+            <RowDefinition Height="19*" />
+            <RowDefinition Height="19*" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -17,18 +17,38 @@
             <ColumnDefinition Width="30*" />
             <ColumnDefinition Width="30*" />
         </Grid.ColumnDefinitions>
-        
+
+
+        <Grid Grid.Row="0" Grid.ColumnSpan="3">
+            <Menu Height="20" Margin="0,1,-250,2">
+                <MenuItem Header="Record">
+                    <MenuItem Header="RGBRecord" />
+                    <MenuItem Header="DepthRecord" />
+                    <MenuItem Header="Save"/>
+                </MenuItem>
+                <MenuItem Header="Action">
+                    <MenuItem Header="Play"/>
+                    <MenuItem Header="Pause"/>
+                    <MenuItem Header="Store"/>
+                </MenuItem>
+                <MenuItem Header="About">
+                    <MenuItem Header="Help" />
+                </MenuItem>
+                <MenuItem Header="Log out" Click="Logout_click" />
+            </Menu>
+        </Grid>
+
         <!-- R1C1S1 -->
         <Grid Grid.Row="1" Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40*" />
                 <RowDefinition Height="5*" />
             </Grid.RowDefinitions>
-            <Label Content="Room1 Kinect1" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Label Content="Room1 Kinect1" MouseUp="r1c1s1_screen_click" Panel.ZIndex="1" Height="40" Margin="0,6,12,140" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
 
             <Grid Grid.Row="0">
-                <Viewbox Width="280" MouseUp="r1c1s2_screen_click" >
-                    <MediaElement Name="R1C1S1" MouseUp="r1c1s2_screen_click" Width="280"/>
+                <Viewbox Width="280">
+                    <MediaElement Name="R1C1S1" MouseUp="r1c1s1_screen_click" Width="280"/>
                 </Viewbox>
                 <Button Height="20" Margin="319,166,7,0" Click="r1c1s1_file">
                     <Image Source="/Images/Logo.png" />
@@ -62,9 +82,9 @@
                 <RowDefinition Height="5*" />
             </Grid.RowDefinitions>
 
-            <Label Content="Room1 Kinect2" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Label Content="Room1 Kinect2" MouseUp="r1c1s2_screen_click" Panel.ZIndex="1" Height="40" Margin="0,6,12,140" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
             <Grid Grid.Row="0">
-                <Viewbox Width="280" MouseUp="r1c1s2_screen_click" >
+                <Viewbox Width="280">
                     <MediaElement Name="R1C1S2" MouseUp="r1c1s2_screen_click" Width="280"/>
                 </Viewbox>
                 <Button Height="20" Margin="319,166,7,0" Click="r1c1s2_file">
@@ -98,9 +118,9 @@
                 <RowDefinition Height="5*" />
             </Grid.RowDefinitions>
 
-            <Label Content="Room2 Kinect1" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Label Content="Room2 Kinect1" MouseUp="r1c2s1_screen_click" Panel.ZIndex="1" Height="40" Margin="0,6,12,140" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
             <Grid Grid.Row="0">
-                <Viewbox Width="280" MouseUp="r1c2s1_screen_click" >
+                <Viewbox Width="280">
                     <MediaElement Name="R1C2S1" MouseUp="r1c2s1_screen_click" Width="280"/>
                 </Viewbox>
                 <Button Height="20" Margin="319,166,7,0" Click="r1c2s1_file">
@@ -134,9 +154,9 @@
                 <RowDefinition Height="5*" />
             </Grid.RowDefinitions>
 
-            <Label Content="Room2 Kinect2" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Label Content="Room2 Kinect2" MouseUp="r1c2s2_screen_click" Panel.ZIndex="1" Height="40" Margin="0,6,12,140" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
             <Grid Grid.Row="0">
-                <Viewbox Width="280" MouseUp="r1c2s2_screen_click" >
+                <Viewbox Width="280">
                     <MediaElement Name="R1C2S2" MouseUp="r1c2s2_screen_click" Width="280"/>
                 </Viewbox>
                 <Button Height="20" Margin="319,166,7,0" Click="r1c2s2_file">
@@ -170,9 +190,9 @@
                 <RowDefinition Height="5*" />
             </Grid.RowDefinitions>
 
-            <Label Content="Room3 Kinect1" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Label Content="Room3 Kinect1" MouseUp="r1c3s1_screen_click" Panel.ZIndex="1" Height="40" Margin="0,6,12,140" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
             <Grid Grid.Row="0">
-                <Viewbox Width="280" MouseUp="r1c3s1_screen_click" >
+                <Viewbox Width="280">
                     <MediaElement Name="R1C3S1" MouseUp="r1c3s1_screen_click" Width="280"/>
                 </Viewbox>
                 <Button Height="20" Margin="319,166,7,0" Click="r1c3s1_file">
@@ -206,9 +226,9 @@
                 <RowDefinition Height="5*" />
             </Grid.RowDefinitions>
 
-            <Label Content="Room3 Kinect2" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Label Content="Room3 Kinect2" MouseUp="r1c3s1_screen_click" Panel.ZIndex="1" Height="40" Margin="0,6,12,140" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
             <Grid Grid.Row="0">
-                <Viewbox Width="280" MouseUp="r1c3s2_screen_click" >
+                <Viewbox Width="280">
                     <MediaElement Name="R1C3S2" MouseUp="r1c3s2_screen_click" Width="280"/>
                 </Viewbox>
                 <Button Height="20" Margin="319,166,7,0" Click="r1c3s2_file">
@@ -242,9 +262,9 @@
                 <RowDefinition Height="5*" />
             </Grid.RowDefinitions>
 
-            <Label Content="Room4 Kinect1" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Label Content="Room4 Kinect1" MouseUp="r2c1s1_screen_click" Panel.ZIndex="1" Height="40" Margin="0,6,12,140" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
             <Grid Grid.Row="0">
-                <Viewbox Width="280" MouseUp="r2c1s1_screen_click" >
+                <Viewbox Width="280">
                     <MediaElement Name="R2C1S1" MouseUp="r2c1s1_screen_click" Width="280"/>
                 </Viewbox>
                 <Button Height="20" Margin="319,166,7,0" Click="r2c1s1_file">
@@ -278,9 +298,9 @@
                 <RowDefinition Height="5*" />
             </Grid.RowDefinitions>
 
-            <Label Content="Room4 Kinect2" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Label Content="Room4 Kinect2" MouseUp="r2c1s2_screen_click" Panel.ZIndex="1" Height="40" Margin="0,6,12,140" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
             <Grid Grid.Row="0">
-                <Viewbox Width="280" MouseUp="r2c1s2_screen_click" >
+                <Viewbox Width="280">
                     <MediaElement Name="R2C1S2" MouseUp="r2c1s2_screen_click" Width="280"/>
                 </Viewbox>
                 <Button Height="20" Margin="319,166,7,0" Click="r2c1s2_file">
@@ -314,9 +334,9 @@
                 <RowDefinition Height="5*" />
             </Grid.RowDefinitions>
 
-            <Label Content="Room5 Kinect1" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Label Content="Room5 Kinect1" MouseUp="r2c2s1_screen_click" Panel.ZIndex="1" Height="40" Margin="0,6,12,140" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
             <Grid Grid.Row="0">
-                <Viewbox Width="280" MouseUp="r2c2s1_screen_click" >
+                <Viewbox Width="280">
                     <MediaElement Name="R2C2S1" MouseUp="r2c2s1_screen_click" Width="280"/>
                 </Viewbox>
                 <Button Height="20" Margin="319,166,7,0" Click="r2c2s1_file">
@@ -350,9 +370,9 @@
                 <RowDefinition Height="5*" />
             </Grid.RowDefinitions>
 
-            <Label Content="Room5 Kinect2" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Label Content="Room5 Kinect2" MouseUp="r2c2s2_screen_click" Panel.ZIndex="1" Height="40" Margin="0,6,12,140" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
             <Grid Grid.Row="0">
-                <Viewbox Width="280" MouseUp="r2c2s2_screen_click" >
+                <Viewbox Width="280">
                     <MediaElement Name="R2C2S2" MouseUp="r2c2s2_screen_click" Width="280"/>
                 </Viewbox>
                 <Button Height="20" Margin="319,166,7,0" Click="r2c2s2_file">
@@ -386,9 +406,9 @@
                 <RowDefinition Height="5*" />
             </Grid.RowDefinitions>
 
-            <Label Content="Room6 Kinect1" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Label Content="Room6 Kinect1" MouseUp="r2c3s1_screen_click" Panel.ZIndex="1" Height="40" Margin="0,6,12,140" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
             <Grid Grid.Row="0">
-                <Viewbox Width="280" MouseUp="r2c3s1_screen_click" >
+                <Viewbox Width="280">
                     <MediaElement Name="R2C3S1" MouseUp="r2c3s1_screen_click" Width="280"/>
                 </Viewbox>
                 <Button Height="20" Margin="319,166,7,0" Click="r2c3s1_file">
@@ -422,9 +442,9 @@
                 <RowDefinition Height="5*" />
             </Grid.RowDefinitions>
 
-            <Label Content="Room6 Kinect2" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Label Content="Room6 Kinect2" MouseUp="r2c3s2_screen_click" Panel.ZIndex="1" Height="40" Margin="0,6,12,140" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
             <Grid Grid.Row="0">
-                <Viewbox Width="280" MouseUp="r2c3s2_screen_click" >
+                <Viewbox Width="280">
                     <MediaElement Name="R2C3S2" MouseUp="r2c3s2_screen_click" Width="280"/>
                 </Viewbox>
                 <Button Height="20" Margin="319,166,7,0" Click="r2c3s2_file">
@@ -451,12 +471,8 @@
             </Grid>
         </Grid>
 
-
-
-
-
-
-
+        
+        
 
         <!--  Border brush  -->
 

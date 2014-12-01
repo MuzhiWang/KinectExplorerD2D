@@ -27,6 +27,14 @@ namespace Northwestern.Samples.Kinect.KinectExplorerD2D
         }
 
 
+        /****  Log out click  ****/
+        private void Logout_click(object sender, RoutedEventArgs e)
+        {
+            Northwestern.Samples.Kinect.KinectExplorerD2D.ClientSignIn signIn = new ClientSignIn();
+            signIn.Show();
+            this.Close();
+        }
+
         /******  R1C1S1  ******/
         private void r1c1s1_stop(object sender, RoutedEventArgs e)
         {

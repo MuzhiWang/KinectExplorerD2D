@@ -19,6 +19,10 @@
     using System.Text;
     using Microsoft.Win32;
     using System.Windows.Controls.Primitives;
+    using System.Windows.Interop;
+    using System.Windows.Controls;
+
+    //using System.Web;
 
     //using Wind
     //using Windows.Storage;
@@ -348,9 +352,28 @@
         /*********  Log out button  **********/
         private void Logout_click(object sender, RoutedEventArgs e)
         {
-            //this.Close();
-            Northwestern.Samples.Kinect.KinectExplorerD2D.ClientSignIn signIn = new ClientSignIn();
-            signIn.Show();
+            
+            //Northwestern.Samples.Kinect.KinectExplorerD2D.ClientSignIn signIn = new ClientSignIn();
+            //signIn.Show();
+
+            //Window parentWin = Window.GetWindow(this);
+            //parentWin.Close();
+
+            //DependencyObject parent = this.Parent;
+            //parent = LogicalTreeHelper.GetParent(parent);
+            //Window objLogin = parent as Window;
+            //while (parent != null && !(parent is Window))
+            //{
+            //    parent = LogicalTreeHelper.GetParent(parent);
+            //}
+            //Window w = parent as Window;
+            //if (w != null)
+            //    w.Close();
+
+            //HwndSource source = (HwndSource)PresentationSource.FromVisual(sender as Button);
+            //System.Windows.Forms.Control ctl = System.Windows.Forms.Control.FromChildHandle(source.Handle);
+            //ctl.FindForm().Close();
+
             this.Close();
         }
 

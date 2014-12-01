@@ -221,4 +221,3 @@ C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debu
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.pdb
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\MultiWindow.baml
 C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\MultiWindow.g.cs
-C:\Users\Muzhi\Google Drive\Course documents\EECS_499\KinectExplorerD2D\obj\Debug\KinectExplorerD2D.csprojResolveAssemblyReference.cache
