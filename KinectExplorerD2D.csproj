@@ -125,6 +125,9 @@
     <Compile Include="ClientSignIn.xaml.cs">
       <DependentUpon>ClientSignIn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataGrid.xaml.cs">
+      <DependentUpon>DataGrid.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DateHelper.cs" />
     <Compile Include="DatePicker.cs" />
     <Compile Include="MultiWindow.xaml.cs">
@@ -139,6 +142,10 @@
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
     <Page Include="ClientSignIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

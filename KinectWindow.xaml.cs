@@ -377,9 +377,7 @@
             this.Close();
         }
 
-
         /***** onclick return original time+data information  ****/
-        
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
             DateTime originData;
