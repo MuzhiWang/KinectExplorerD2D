@@ -1,8 +1,507 @@
 ﻿<Window x:Class="Northwestern.Samples.Kinect.KinectExplorerD2D.MultiWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MultiWindow" Height="720" Width="1080">
+        Title="MultiWindow" Height="900" Width="1080">
     <Grid>
+
+        <Grid.RowDefinitions >
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="25*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*" />
+            <ColumnDefinition Width="30*" />
+            <ColumnDefinition Width="30*" />
+        </Grid.ColumnDefinitions>
         
+        <!-- R1C1S1 -->
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+            <Label Content="Room1 Kinect1" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+
+            <Grid Grid.Row="0">
+                <Viewbox Width="280" MouseUp="r1c1s2_screen_click" >
+                    <MediaElement Name="R1C1S1" MouseUp="r1c1s2_screen_click" Width="280"/>
+                </Viewbox>
+                <Button Height="20" Margin="319,166,7,0" Click="r1c1s1_file">
+                    <Image Source="/Images/Logo.png" />
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Button Content="Stop" Click="r1c1s1_stop" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button Content="Pause" Click="r1c1s1_pause" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button Content="Play" Click="r1c1s1_play" />
+                </Grid>
+            </Grid>
+
+        </Grid>
+
+        <!-- R1C1S2 -->
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+
+            <Label Content="Room1 Kinect2" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Grid Grid.Row="0">
+                <Viewbox Width="280" MouseUp="r1c1s2_screen_click" >
+                    <MediaElement Name="R1C1S2" MouseUp="r1c1s2_screen_click" Width="280"/>
+                </Viewbox>
+                <Button Height="20" Margin="319,166,7,0" Click="r1c1s2_file">
+                    <Image Source="/Images/Logo.png" />
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Button Content="Stop" Click="r1c1s2_stop" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button Content="Pause" Click="r1c1s2_pause" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button Content="Play" Click="r1c1s2_play" />
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!-- R1C2S1 -->
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+
+            <Label Content="Room2 Kinect1" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Grid Grid.Row="0">
+                <Viewbox Width="280" MouseUp="r1c2s1_screen_click" >
+                    <MediaElement Name="R1C2S1" MouseUp="r1c2s1_screen_click" Width="280"/>
+                </Viewbox>
+                <Button Height="20" Margin="319,166,7,0" Click="r1c2s1_file">
+                    <Image Source="/Images/Logo.png" />
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Button Content="Stop" Click="r1c2s1_stop" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button Content="Pause" Click="r1c2s1_pause" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button Content="Play" Click="r1c2s1_play" />
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!-- R1C2S2 -->
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+
+            <Label Content="Room2 Kinect2" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Grid Grid.Row="0">
+                <Viewbox Width="280" MouseUp="r1c2s2_screen_click" >
+                    <MediaElement Name="R1C2S2" MouseUp="r1c2s2_screen_click" Width="280"/>
+                </Viewbox>
+                <Button Height="20" Margin="319,166,7,0" Click="r1c2s2_file">
+                    <Image Source="/Images/Logo.png" />
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Button Content="Stop" Click="r1c2s2_stop" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button Content="Pause" Click="r1c2s2_pause" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button Content="Play" Click="r1c2s2_play" />
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!-- R1C3S1 -->
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+
+            <Label Content="Room3 Kinect1" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Grid Grid.Row="0">
+                <Viewbox Width="280" MouseUp="r1c3s1_screen_click" >
+                    <MediaElement Name="R1C3S1" MouseUp="r1c3s1_screen_click" Width="280"/>
+                </Viewbox>
+                <Button Height="20" Margin="319,166,7,0" Click="r1c3s1_file">
+                    <Image Source="/Images/Logo.png" />
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Button Content="Stop" Click="r1c3s1_stop" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button Content="Pause" Click="r1c3s1_pause" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button Content="Play" Click="r1c3s1_play" />
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!-- R1C3S2 -->
+        <Grid Grid.Row="2" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+
+            <Label Content="Room3 Kinect2" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Grid Grid.Row="0">
+                <Viewbox Width="280" MouseUp="r1c3s2_screen_click" >
+                    <MediaElement Name="R1C3S2" MouseUp="r1c3s2_screen_click" Width="280"/>
+                </Viewbox>
+                <Button Height="20" Margin="319,166,7,0" Click="r1c3s2_file">
+                    <Image Source="/Images/Logo.png" />
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Button Content="Stop" Click="r1c3s2_stop" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button Content="Pause" Click="r1c3s2_pause" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button Content="Play" Click="r1c3s2_play" />
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!-- R2C1S1 -->
+        <Grid Grid.Row="3" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+
+            <Label Content="Room4 Kinect1" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Grid Grid.Row="0">
+                <Viewbox Width="280" MouseUp="r2c1s1_screen_click" >
+                    <MediaElement Name="R2C1S1" MouseUp="r2c1s1_screen_click" Width="280"/>
+                </Viewbox>
+                <Button Height="20" Margin="319,166,7,0" Click="r2c1s1_file">
+                    <Image Source="/Images/Logo.png" />
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Button Content="Stop" Click="r2c1s1_stop" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button Content="Pause" Click="r2c1s1_pause" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button Content="Play" Click="r2c1s1_play" />
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!-- R2C1S2 -->
+        <Grid Grid.Row="4" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+
+            <Label Content="Room4 Kinect2" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Grid Grid.Row="0">
+                <Viewbox Width="280" MouseUp="r2c1s2_screen_click" >
+                    <MediaElement Name="R2C1S2" MouseUp="r2c1s2_screen_click" Width="280"/>
+                </Viewbox>
+                <Button Height="20" Margin="319,166,7,0" Click="r2c1s2_file">
+                    <Image Source="/Images/Logo.png" />
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Button Content="Stop" Click="r2c1s2_stop" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button Content="Pause" Click="r2c1s2_pause" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button Content="Play" Click="r2c1s2_play" />
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!-- R2C2S1 -->
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+
+            <Label Content="Room5 Kinect1" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Grid Grid.Row="0">
+                <Viewbox Width="280" MouseUp="r2c2s1_screen_click" >
+                    <MediaElement Name="R2C2S1" MouseUp="r2c2s1_screen_click" Width="280"/>
+                </Viewbox>
+                <Button Height="20" Margin="319,166,7,0" Click="r2c2s1_file">
+                    <Image Source="/Images/Logo.png" />
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Button Content="Stop" Click="r2c2s1_stop" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button Content="Pause" Click="r2c2s1_pause" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button Content="Play" Click="r2c2s1_play" />
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!-- R2C2S2 -->
+        <Grid Grid.Row="4" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+
+            <Label Content="Room5 Kinect2" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Grid Grid.Row="0">
+                <Viewbox Width="280" MouseUp="r2c2s2_screen_click" >
+                    <MediaElement Name="R2C2S2" MouseUp="r2c2s2_screen_click" Width="280"/>
+                </Viewbox>
+                <Button Height="20" Margin="319,166,7,0" Click="r2c2s2_file">
+                    <Image Source="/Images/Logo.png" />
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Button Content="Stop" Click="r2c2s2_stop" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button Content="Pause" Click="r2c2s2_pause" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button Content="Play" Click="r2c2s2_play" />
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!-- R2C3S1 -->
+        <Grid Grid.Row="3" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+
+            <Label Content="Room6 Kinect1" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Grid Grid.Row="0">
+                <Viewbox Width="280" MouseUp="r2c3s1_screen_click" >
+                    <MediaElement Name="R2C3S1" MouseUp="r2c3s1_screen_click" Width="280"/>
+                </Viewbox>
+                <Button Height="20" Margin="319,166,7,0" Click="r2c3s1_file">
+                    <Image Source="/Images/Logo.png" />
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Button Content="Stop" Click="r2c3s1_stop" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button Content="Pause" Click="r2c3s1_pause" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button Content="Play" Click="r2c3s1_play" />
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!-- R2C3S2 -->
+        <Grid Grid.Row="4" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+
+            <Label Content="Room6 Kinect2" FontSize="24" FontFamily="Arial" HorizontalContentAlignment="Center" />
+            <Grid Grid.Row="0">
+                <Viewbox Width="280" MouseUp="r2c3s2_screen_click" >
+                    <MediaElement Name="R2C3S2" MouseUp="r2c3s2_screen_click" Width="280"/>
+                </Viewbox>
+                <Button Height="20" Margin="319,166,7,0" Click="r2c3s2_file">
+                    <Image Source="/Images/Logo.png" />
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Button Content="Stop" Click="r2c3s2_stop" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button Content="Pause" Click="r2c3s2_pause" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button Content="Play" Click="r2c3s2_play" />
+                </Grid>
+            </Grid>
+        </Grid>
+
+
+
+
+
+
+
+
+        <!--  Border brush  -->
+
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <Border
+                BorderBrush="RoyalBlue"
+                BorderThickness="7"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch" />
+        </Grid>
+
+        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <Border
+                BorderBrush="RoyalBlue"
+                BorderThickness="7"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch" />
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0" Grid.RowSpan="4">
+            <Border
+                BorderBrush="RoyalBlue"
+                BorderThickness="7"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch" />
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1" Grid.RowSpan="4">
+            <Border
+                BorderBrush="RoyalBlue"
+                BorderThickness="7"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch" />
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="2" Grid.RowSpan="4">
+            <Border
+                BorderBrush="RoyalBlue"
+                BorderThickness="7"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch" />
+        </Grid>
+
+
+
+
     </Grid>
 </Window>
