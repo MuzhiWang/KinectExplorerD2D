@@ -22,6 +22,7 @@
     using System.Windows.Interop;
     using System.Windows.Controls;
 
+
     //using System.Web;
 
     //using Wind
@@ -496,10 +497,10 @@
         {
             /******/
             FTPDownload ftpTest = new FTPDownload();
-            string[] fileNames = ftpTest.GetFileList();
-            foreach (string file in fileNames) {
-                Console.WriteLine(file);
-            }
+            //string[] fileNames = ftpTest.GetFileList();
+            //foreach (string file in fileNames) {
+            //    Console.WriteLine(file);
+            //}
             string[] downloadFileNames = new string[3];
             // rgb 0, depth 1, csv 2; 
             char[] fileName = "100_0_2014_11_21_23_58_59".ToCharArray();
@@ -671,7 +672,7 @@
         public void Download(string file)
         {                       
             try
-            {   
+            {  
                 string ftpServerIP = "129.105.36.183";
                 string ftpUserID = "lisaliu";
                 string ftpPassword = "123456";
@@ -682,7 +683,8 @@
                 {
                     return;
                 }       
-                FtpWebRequest reqFTP;                
+                FtpWebRequest reqFTP;   
+                
                 reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://" + ftpServerIP + "/" + file));                                
                 reqFTP.Credentials = new NetworkCredential(ftpUserID, ftpPassword);                
                 reqFTP.KeepAlive = false;                
